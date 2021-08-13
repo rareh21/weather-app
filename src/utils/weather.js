@@ -8,7 +8,7 @@ const weather = (lat, lon, callback) => {
 		} else if (body.error) {
 			callback('Unable to find location!', undefined);
 		} else {
-			callback(undefined, `It is currently ${body.current.temperature} degree out. There is a ${body.current.precip} % chance of rain.`);
+			callback(undefined, `It is currently ${body.current.temperature} degree out but feels like ${body.current.feelslike}. There is a ${body.current.precip} % chance of rain. The humidity is ${body.current.humidity} %. Last observed on ${body.current.observation_time}`);
 		}
 	});
 }
